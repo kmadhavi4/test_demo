@@ -1,0 +1,17 @@
+
+{
+    "format_version": 1,
+    "import_settings": {
+      "include_filter": []
+    },
+    "imports": [
+      {
+        "target_table": "EMPLOYEE1",
+        "source_data": {
+          "data_type": "CSV",
+          "file_name": "Employee.csv",
+          "has_header": true
+        }
+      }
+    ]
+  }

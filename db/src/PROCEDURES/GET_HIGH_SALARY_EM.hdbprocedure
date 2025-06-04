@@ -1,0 +1,24 @@
+PROCEDURE "GET_HIGH_SALARY_EM"( 
+        IN min_salary DECIMAL(10,2),
+        OUT result TABLE (
+            "ID" INTEGER,
+            "FirstName" NVARCHAR(50),
+            "LastName" NVARCHAR(50),
+            "Department" NVARCHAR(50),
+            "Salary" DECIMAL(10,2)
+        )
+    )
+    LANGUAGE SQLSCRIPT
+    SQL SECURITY INVOKER
+    AS
+    BEGIN
+        result = 
+            SELECT
+                ID,
+                "FirstName",
+                "LastName",
+                "Department",
+                "Salary"
+            FROM "Employee"
+            WHERE "Salary">= :min_salary;
+    END;
